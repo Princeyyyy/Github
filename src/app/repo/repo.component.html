@@ -1,1 +1,23 @@
-<p>repo works!</p>
+<div class="jumbotron">
+    <h1 class="text-center gsearch">Github Repository Search:</h1>
+    <h5 class="text-center repo-number text-white"><span id="num">{{myRepo.length}}</span> Repositories found.</h5>
+    <app-search (searchEmmiter)="getRepo($event)"></app-search>
+  
+  
+  </div>
+  <div class="container card-columns">
+    <div class="card" *ngFor="let repo of myRepo">
+      <div class="card">
+        <div class="card-header text-center"><h2 id="rname"><strong>{{repo.name}}</strong></h2></div>
+        <div class="card-body">
+          <p id="rdesc"><em>Description</em> : {{repo.description}}</p>
+          <p id="rlang"><em>Languages Used</em> : <strong>{{repo.language}}</strong></p>
+        </div>
+        <div class="card-footer flex-footer">
+          <p id="rwatchers" class="text-center">Watchers : <span class="data"><strong>{{repo.watchers}}</strong></span></p>
+          <p id="rforks" class="text-center">Forks : <span class="data"><strong>{{repo.forks}}</strong></span></p>
+          <p id="rbranch" class="text-center">Branch : <span class="data"><strong>{{repo.default_branch}}</strong> </span></p>
+        </div>
+      </div>
+    </div>
+  </div>
