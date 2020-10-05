@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from '../user-service.service';
-import { User } from "../user";
+import {UserServiceService} from '../user-service.service';
+import {User} from '../user';
 
 @Component({
   selector: 'app-user',
@@ -14,8 +14,8 @@ export class UserComponent implements OnInit {
   constructor(private service: UserServiceService) {
   }
 
-  getSearchedUser(searchTerm) {
-    this.service.searchUser(searchTerm).then(
+  getUser(searchTerm) {
+    this.service.searchMyUser(searchTerm).then(
       (success) => {
         this.newUser = this.service.newUser;
         console.log(this.newUser);
@@ -27,7 +27,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getSearchedUser('Princeyyyy');
+    this.getUser('Princeyyyy');
     // tslint:disable-next-line:prefer-const
     let particlesJS;
     particlesJS.load('particles-js', 'particles.json', null);

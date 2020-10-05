@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {UserComponent} from './/user/user.component';
 import {RepoComponent} from './repo/repo.component';
+import {SearchComponent} from "./search/search.component";
 
 const routes: Routes = [
-  {path: 'user', component: UserComponent},
-  {path: 'repo', component: RepoComponent},
-  {path: '', redirectTo: '/user', pathMatch: 'full'},
+  {path: 'user-list', component: UserComponent},
+  {path: 'repo-list', component: RepoComponent},
+  {path: 'search-list', component: SearchComponent},
+  {path: '', redirectTo: '/repo', pathMatch: 'full'},
 
 ];
 @NgModule({

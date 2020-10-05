@@ -1,1 +1,45 @@
-<p>User Works</p>
+<div>
+    <div>
+        <h2 class="mb-5 text-center gsearch">Github Search:</h2>
+        <h5 class="text-center">Search for Github Users below:</h5>
+        
+
+
+    </div>
+    <div *ngFor="let u of User">
+      <div class="container">
+                <div>
+                    <a href="#" class="btn btn-sm btn-info mr-4">Follow</a>
+                </div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                        <div>
+                          <span><strong>{{u.followers}}</strong></span>
+                          <span>Following</span>
+                        </div>
+                        <div>
+                          <span><strong>{{u.following}}</strong></span>
+                          <span>Followers</span>
+                        </div>
+                        <div>
+                          <span><strong>{{u.public_repos}}</strong></span>
+                          <span>Repos</span>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <h3 class="user">{{u.login}}</h3>
+                    <div>
+                      <p>{{u.location}}</p>
+                    </div>
+                    <div>
+                      <p>{{u.bio}}</p>
+                    </div>
+                    <div>
+                      <p>{{u.company}}</p>
+                    </div>
+                  </div>
+                </div>
+        </div>
+    </div>

@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment';
-import { User } from "./user";
-import { SearchComponent } from './search/search.component';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {environment} from '../environments/environment';
+import {User} from './user';
+import {UserComponent} from './user/user.component';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +11,13 @@ import { Observable } from 'rxjs';
 export class UserServiceService {
   newUser: User[] = [];
   _URL = 'https://api.github.com/users/';
-  token = '?access_token=7a3199f0cb0e59a138ed7099cf0a8a4691c1721d';
+  token = '?access_token=3cbbddb991c02e7d5a2f0fd4224f9267a5153e5f';
 
   constructor(private http: HttpClient) {
   }
-
-  searchUser(searchTerm: string) {
+  
+  searchMyUser(searchTerm: string) {
+    // tslint:disable-next-line:class-name
     interface data {
       login: string;
       avatar_url: string;
